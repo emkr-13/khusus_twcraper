@@ -14,7 +14,7 @@ async def login_with_csv(api, filename):
 
 async def main():
     api = API()
-    csv_filename = 'data_50.csv'  # Replace 'your_csv_file.csv' with your actual CSV file path
+    csv_filename = 'data_20.csv'  # Replace 'your_csv_file.csv' with your actual CSV file path
     await login_with_csv(api, csv_filename)
 
 if __name__ == "__main__":
