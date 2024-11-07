@@ -18,13 +18,13 @@ async def main():
             lang:id"""
     print(query)
     tweets = []
-    async for tweet in api.search(query,limit=600, kv={"product": "Latest"}):
+    async for tweet in api.search(query,limit=1, kv={"product": "Latest"}):
         tweets.append(tweet.json())
     end_time = time.time()
     elapsed_time = end_time - start_time
     print(f"Total waktu yang diperlukan: {elapsed_time} detik jumlah len {len(tweets)}")
     # Write tweets to JSON file
-    with open("tweets700.json", "w") as json_file:
+    with open("tweets1.json", "w") as json_file:
         json.dump(tweets, json_file, indent=4)
     
 if __name__ == "__main__":
