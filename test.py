@@ -24,7 +24,7 @@ async def main():
     elapsed_time = end_time - start_time
     print(f"Total waktu yang diperlukan: {elapsed_time} detik jumlah len {len(tweets)}")
     # Write tweets to JSON file
-    with open("tweets1.json", "w") as json_file:
+    with open("tweets_test.json", "w") as json_file:
         json.dump(tweets, json_file, indent=4)
     
 if __name__ == "__main__":
