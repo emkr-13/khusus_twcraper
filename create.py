@@ -8,14 +8,18 @@ async def login_with_csv(api, filename):
         # Skip header if present
         next(reader, None)
         for row in reader:
-            email, password, username, _ = row  # Assuming the CSV format is email,password,username,password
+            print(f"Row: {row}")  # Debugging statement to see the row content
+            if len(row) < 4:
+                continue
+            email, password, username, _ = row
             await api.pool.add_account(username, password, email, password)  # Adding accounts
     await api.pool.login_all()  # Logging in all added accounts
 
 async def main():
     api = API()
-    csv_filename = 'data_udah_dicoba11.csv'  # Replace 'your_csv_file.csv' with your actual CSV file path
+    csv_filename = 'data_udah_dicoba16.csv'  # Replace 'your_csv_file.csv' with your actual CSV file path
     await login_with_csv(api, csv_filename)
 
 if __name__ == "__main__":
     asyncio.run(main())
+
